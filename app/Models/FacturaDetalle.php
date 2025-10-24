@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class FacturaDetalle extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'factura_id',
         'producto_id',
@@ -26,7 +26,7 @@ class FacturaDetalle extends Model
     ];
 
     /**
-     * Relación con factura
+     * @return BelongsTo
      */
     public function factura(): BelongsTo
     {
@@ -34,7 +34,7 @@ class FacturaDetalle extends Model
     }
 
     /**
-     * Relación con producto
+     * @return BelongsTo
      */
     public function producto(): BelongsTo
     {
@@ -42,7 +42,7 @@ class FacturaDetalle extends Model
     }
 
     /**
-     * Calcular el subtotal automáticamente antes de guardar
+     * @return void
      */
     protected static function booted()
     {

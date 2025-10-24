@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Producto extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'nombre',
         'codigo',
@@ -23,7 +23,7 @@ class Producto extends Model
     ];
 
     /**
-     * Relación con factura_detalles
+     * @return HasMany
      */
     public function facturaDetalles(): HasMany
     {

@@ -35,4 +35,9 @@ return [
         ],
     ],
 
+    'factura_externa' => [
+        'url' => env('FACTURA_EXTERNA_URL', 'http://localhost:3000/facturas/recibir'),
+        'enabled' => env('FACTURA_EXTERNA_ENABLED', true),
+    ],
+
 ];

@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Cliente extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'nombre',
         'email',
@@ -20,7 +20,7 @@ class Cliente extends Model
     ];
 
     /**
-     * Relación con facturas
+     * @return HasMany
      */
     public function facturas(): HasMany
     {

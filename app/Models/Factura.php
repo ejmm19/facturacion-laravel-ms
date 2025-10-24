@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Factura extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'cliente_id',
         'consecutivo_id',
@@ -26,7 +26,7 @@ class Factura extends Model
     ];
 
     /**
-     * Relación con cliente
+     * @return BelongsTo
      */
     public function cliente(): BelongsTo
     {
@@ -34,7 +34,7 @@ class Factura extends Model
     }
 
     /**
-     * Relación con consecutivo
+     * @return BelongsTo
      */
     public function consecutivo(): BelongsTo
     {
@@ -42,7 +42,7 @@ class Factura extends Model
     }
 
     /**
-     * Relación con factura_detalles
+     * @return HasMany
      */
     public function detalles(): HasMany
     {
@@ -50,7 +50,7 @@ class Factura extends Model
     }
 
     /**
-     * Calcular el total de la factura
+     * @return void
      */
     public function calcularTotal(): void
     {

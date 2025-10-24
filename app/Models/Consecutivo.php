@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Consecutivo extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'prefijo',
         'numero_actual',
@@ -21,7 +21,7 @@ class Consecutivo extends Model
     ];
 
     /**
-     * Relación con facturas
+     * @return HasMany
      */
     public function facturas(): HasMany
     {
@@ -29,13 +29,13 @@ class Consecutivo extends Model
     }
 
     /**
-     * Obtener el siguiente número de factura
+     * @return string
      */
     public function obtenerSiguienteNumero(): string
     {
         $this->increment('numero_actual');
         $this->refresh();
-        
+
         return $this->prefijo . str_pad((string)$this->numero_actual, 6, '0', STR_PAD_LEFT);
     }
 }
